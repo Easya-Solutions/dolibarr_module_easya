@@ -1,0 +1,3 @@
+name, value, type, visible, note
+TEST_CONSTANTE_1, "toto@toto.fr", chaine,1 ,  "une belle description"
+TEST_CONSTANTE_2, 2, chaine, 0, 'une autre description'
