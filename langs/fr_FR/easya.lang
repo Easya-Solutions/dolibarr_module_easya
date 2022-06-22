@@ -9,3 +9,4 @@ Module501000Desc = Module spécifique pour easya
 easyaSetup                            = Configuration du module easya
 LoadConfigurationFile                 = Charger un fichier CSV de configuration
 LoadBackupFile                        = Restaurer un fichier de backup
+ConstantsApplied                      = Paramétrages appliqués avec succès

@@ -7,3 +7,6 @@ Module501000Desc = Specific module for easya
 # Configuration admin
 #######################################################################
 easyaSetup                            = easya module configuration
+LoadConfigurationFile                 = Download a configuration file
+LoadBackupFile                        = Reload a configuration file
+ConstantsApplied                      = settings applied successfully
