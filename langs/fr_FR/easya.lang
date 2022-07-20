@@ -6,7 +6,12 @@ Module501000Desc = Module spécifique pour easya
 #######################################################################
 # Configuration admin
 #######################################################################
-easyaSetup                            = Configuration du module easya
+EasyaSetup                            = Configuration du module easya
 LoadConfigurationFile                 = Charger un fichier CSV de configuration
 LoadBackupFile                        = Restaurer un fichier de backup
 ConstantsApplied                      = Paramétrages appliqués avec succès
+BackupIndexDoesNotexist               = Erreur : L'index du fichier de backup indiqué n'existe pas.
+TooLargeFile                          = Erreur : le fichier est trop grand (5Mo maximum).
+PleaseProvideCSV                      = Erreur : le fichier n'est pas un CSV.
+NoPhpFile                             = Erreur : les fichiers PHP sont interdits.
+
