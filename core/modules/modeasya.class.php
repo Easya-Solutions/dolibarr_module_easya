@@ -209,7 +209,7 @@ class modeasya extends DolibarrModules
         $r ++;
         $this->const [$r] [0] = "MAIN_MODULE_SETUP_ON_LIST_BY_DEFAULT";
         $this->const [$r] [1] = "chaine";
-        $this->const [$r] [2] = "1";
+        $this->const [$r] [2] = "common";
         $this->const [$r] [3] = 0;
         $this->const [$r] [4] = 1;
         $this->const [$r] [5] = 'all';
