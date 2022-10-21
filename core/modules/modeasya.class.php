@@ -132,7 +132,7 @@ class modeasya extends DolibarrModules
 		$r ++;
 		$this->const [$r] [0] = "EASYA_VERSION";
 		$this->const [$r] [1] = "chaine";
-		$this->const [$r] [2] = "2022.5.1";
+		$this->const [$r] [2] = $this->version;
 		$this->const [$r] [3] = 0;
 		$this->const [$r] [4] = 0;
 		$this->const [$r] [5] = 'all';
