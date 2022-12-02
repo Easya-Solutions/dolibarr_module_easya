@@ -1,6 +1,8 @@
 # ChangeLog
 Le format du fichier est basé sur [Tenez un ChangeLog](http://keepachangelog.com/fr/1.0.0/).
 
+## 2022.5.3 - 29-11-2022
+- Changement de version suite à la récupération de fixes sur DLBv14
 ## 2022.5.1 - 08-06-2022
 - support des icones FA6 par défaut
 - activation de constantes dans le coeur :
