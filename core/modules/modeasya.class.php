@@ -390,7 +390,6 @@ class modeasya extends DolibarrModules
 	 */
 	public function remove($options = '')
 	{
-		$sql = array();
 
 		dolibarr_del_const($this->db,'EASYA_VERSION');
 		dolibarr_del_const($this->db,'MAIN_FONTAWESOME_DIRECTORY');
@@ -400,6 +399,9 @@ class modeasya extends DolibarrModules
 		dolibarr_del_const($this->db,'INFRASPACKPLUS_DISABLED_CORE_CHANGE');
 		dolibarr_del_const($this->db,'INFRASPACKPLUS_DISABLED_MODULE_CHANGE');
 		dolibarr_del_const($this->db,'MAIN_MODULE_SETUP_ON_LIST_BY_DEFAULT');
+
+		//set $sql to array() to avoid an error with count() in php8 inside $this->_remove()
+		$sql = array();
 
 		return $this->_remove($sql, $options);
 	}
