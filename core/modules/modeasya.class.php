@@ -390,6 +390,8 @@ class modeasya extends DolibarrModules
 	 */
 	public function remove($options = '')
 	{
+		$sql = array();
+
 		dolibarr_del_const($this->db,'EASYA_VERSION');
 		dolibarr_del_const($this->db,'MAIN_FONTAWESOME_DIRECTORY');
 		dolibarr_del_const($this->db,'MAIN_FONTAWESOME_FAMILY');
