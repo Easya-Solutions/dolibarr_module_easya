@@ -50,7 +50,7 @@ print "<br>\n";
 
 $head=easya_prepare_head();
 
-dol_fiche_head($head, 'about', $langs->trans("Module501000Name"), 0, 'action');
+dol_fiche_head($head, 'about', $langs->trans("Module163082Name"), 0, 'action');
 
 print '<table width="100%"><tr>'."\n";
 print '<td width="310px"><img src="../img/opendsi_dolibarr_preferred_partner.png" /></td>'."\n";
