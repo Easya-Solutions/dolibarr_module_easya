@@ -47,7 +47,7 @@ class modeasya extends DolibarrModules
 
 		// Id for module (must be unique).
 		// Use here a free id (See in Home -> System information -> Dolibarr for list of used modules id).
-		$this->numero = 1501000;		// TODO Go on page http://wiki.dolibarr.org/index.php/List_of_modules_id to reserve id number for your module
+		$this->numero = 163082;		// TODO Go on page http://wiki.dolibarr.org/index.php/List_of_modules_id to reserve id number for your module
 		// Key text used to identify module (for permissions, menus, etc...)
 		$this->rights_class = 'easya';
 
@@ -390,6 +390,7 @@ class modeasya extends DolibarrModules
 	 */
 	public function remove($options = '')
 	{
+
 		dolibarr_del_const($this->db,'EASYA_VERSION');
 		dolibarr_del_const($this->db,'MAIN_FONTAWESOME_DIRECTORY');
 		dolibarr_del_const($this->db,'MAIN_FONTAWESOME_FAMILY');
@@ -398,6 +399,9 @@ class modeasya extends DolibarrModules
 		dolibarr_del_const($this->db,'INFRASPACKPLUS_DISABLED_CORE_CHANGE');
 		dolibarr_del_const($this->db,'INFRASPACKPLUS_DISABLED_MODULE_CHANGE');
 		dolibarr_del_const($this->db,'MAIN_MODULE_SETUP_ON_LIST_BY_DEFAULT');
+
+		//set $sql to array() to avoid an error with count() in php8 inside $this->_remove()
+		$sql = array();
 
 		return $this->_remove($sql, $options);
 	}
