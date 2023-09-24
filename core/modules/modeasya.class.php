@@ -51,14 +51,13 @@ class modeasya extends DolibarrModules
 		// Key text used to identify module (for permissions, menus, etc...)
 		$this->rights_class = 'easya';
 
-        $family = (!empty($conf->global->EASYA_VERSION) ? 'easya' : 'opendsi');
         // Family can be 'crm','financial','hr','projects','products','ecm','technic','interface','other'
         // It is used to group modules by family in module setup page
-        $this->family = $family;
+        $this->family = 'easya';
         // Module position in the family
-        $this->module_position = 2;
+        $this->module_position = 500;
         // Gives the possibility to the module, to provide his own family info and position of this family (Overwrite $this->family and $this->module_position. Avoid this)
-        $this->familyinfo = array($family => array('position' => '001', 'label' => $langs->trans($family."Family")));
+        $this->familyinfo = array('easya' => array('position' => '001', 'label' => $langs->trans("easyaFamily")));
         // Where to store the module in setup page (0=common,1=interface,2=others,3=very specific)
         $this->special = 0;
 
@@ -66,10 +65,11 @@ class modeasya extends DolibarrModules
 		$this->name = preg_replace('/^mod/i','',get_class($this));
 		// Module description, used if translation string 'ModuleXXXDesc' not found (where XXX is value of numeric property 'numero' of module)
 		$this->description = "Module spécifique pour Easya.";
-		$this->descriptionlong = "";
-		$this->editor_name = 'Open-DSI';
-		$this->editor_url = 'http://www.open-dsi.fr';
-        $this->editor_email	= 'support@open-dsi.fr';
+        $this->descriptionlong = "";
+        $this->editor_name		= '<b>Easya Solutions</b> (Ex Open-Dsi)';
+        $this->editor_web		= 'https://easya.solutions';
+        $this->editor_url		= "https://easya.solutions";
+        $this->editor_email		= 'support@easya.solutions';
 		
 		// Possible values for version are: 'development', 'experimental', 'dolibarr', 'dolibarr_deprecated' or a version string like 'x.y.z'
 		$this->version = '2022.5.3';
