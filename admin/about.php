@@ -42,7 +42,8 @@ if (!$user->admin) accessforbidden();
  * View
  */
 
-llxHeader();
+ $wikihelp = 'N:Easya_En|FR:Easya_Fr|ES:Easya_Es';
+ llxHeader('', $langs->trans("EasyaSetup"), $wikihelp);
 
 $linkback='<a href="'.DOL_URL_ROOT.'/admin/modules.php">'.$langs->trans("BackToModuleList").'</a>';
 print load_fiche_titre($langs->trans("EasyaSetup"),$linkback,'title_setup');
@@ -51,16 +52,8 @@ print "<br>\n";
 
 $head=easya_prepare_head();
 
-/* dol_fiche_head($head, 'about', $langs->trans("Module163082Name"), 0, 'action');
 
-print '<table width="100%"><tr>'."\n";
-print '<td width="310px"><img src="../img/opendsi_dolibarr_preferred_partner.png" /></td>'."\n";
-print '<td align="left" valign="top"><p>'.$langs->trans("OpenDsiAboutDesc").'</p></td>'."\n";
-print '</tr></table>'."\n";
-
-dol_fiche_end(); */
-
-print dol_get_fiche_head($head, 'about', $langs->trans("Module163040Name"), 0, 'opendsi@documentstray');
+print dol_get_fiche_head($head, 'about', $langs->trans("Module163082Name"), 0, 'opendsi@easya');
 
 
 
@@ -91,7 +84,7 @@ print '<td valign="top"><p>'.$langs->trans("OpenDsiAboutDesc1").' <button type="
 print '</tr></table>'."\n";
 print '</form>'."\n";
 
-
+print dol_get_fiche_end();
 
 llxFooter();
 
