@@ -51,7 +51,7 @@ print "<br>\n";
 
 $head=easya_prepare_head();
 
-dol_fiche_head($head, 'changelog', $langs->trans("Module163082Name"), 0, 'action');
+print dol_get_fiche_head($head, 'changelog', $langs->trans("Module163082Name"), 0, 'opendsi@easya');
 
 $changelog = opendsi_common_getChangeLog('easya');
 

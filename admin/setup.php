@@ -129,7 +129,7 @@ print "<br>\n";
 $head=easya_prepare_head();
 $form = new Form($db);
 
-dol_fiche_head($head, 'settings', $langs->trans("Module163082Name"), 0, 'action');
+print dol_get_fiche_head($head, 'settings', $langs->trans("Module163082Name"), 0, 'opendsi@easya');
 
 
 print '<br>';
