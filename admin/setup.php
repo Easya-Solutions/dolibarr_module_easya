@@ -58,7 +58,15 @@ if (!empty($backup_file_choice) && !empty($_FILES['csv_input']["name"])) {
 }
 
 // Get backup files 
-$backup_files_path = scandir(Constants::$backup_dir);
+/* $backup_files_path = scandir(Constants::$backup_dir);
+array_shift($backup_files_path);
+$backup_files_path[0] = ''; */
+
+$backup_files_path = @scandir(Constants::$backup_dir);
+if (!$backup_files_path) {
+    dol_mkdir('/easya/const_backup', DOL_DATA_ROOT);
+    $backup_files_path = [Constants::$backup_dir];
+}
 array_shift($backup_files_path);
 $backup_files_path[0] = '';
 
@@ -94,6 +102,7 @@ if (!empty($_FILES['csv_input']["name"])) {
 }
 
 // Load constants
+$err = '';
 if ($err == 0 && !empty($file_to_load)) {
     // get content as array
     try {
