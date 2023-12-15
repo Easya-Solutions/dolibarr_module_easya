@@ -29,6 +29,7 @@ if (! $res && file_exists("../../../main.inc.php")) $res=@include '../../../main
 if (! $res) die("Include of main fails");
 require_once DOL_DOCUMENT_ROOT.'/core/lib/admin.lib.php';
 dol_include_once('/easya/lib/easya.lib.php');
+dol_include_once('/easya/core/modules/modeasya.class.php');
 
 $langs->load("admin");
 $langs->load("easya@easya");
@@ -41,7 +42,8 @@ if (!$user->admin) accessforbidden();
  * View
  */
 
-llxHeader();
+ $wikihelp = 'N:Easya_En|FR:Easya_Fr|ES:Easya_Es';
+ llxHeader('', $langs->trans("EasyaSetup"), $wikihelp);
 
 $linkback='<a href="'.DOL_URL_ROOT.'/admin/modules.php">'.$langs->trans("BackToModuleList").'</a>';
 print load_fiche_titre($langs->trans("EasyaSetup"),$linkback,'title_setup');
@@ -50,15 +52,39 @@ print "<br>\n";
 
 $head=easya_prepare_head();
 
-dol_fiche_head($head, 'about', $langs->trans("Module163082Name"), 0, 'action');
 
-print '<table width="100%"><tr>'."\n";
+print dol_get_fiche_head($head, 'about', $langs->trans("Module163082Name"), 0, 'opendsi@easya');
+
+
+
+/* print '<table width="100%"><tr>'."\n";
 print '<td width="310px"><img src="../img/opendsi_dolibarr_preferred_partner.png" /></td>'."\n";
 print '<td align="left" valign="top"><p>'.$langs->trans("OpenDsiAboutDesc").'</p></td>'."\n";
+print '</tr></table>'."\n"; */
+
+
+
+$modClass = new modeasya($db);
+$easyaVersion = !empty($modClass->getVersion()) ? $modClass->getVersion() : 'NC';
+
+$supportvalue = "/*****"."<br>";
+$supportvalue.= " * Module version : ".$easyaVersion."<br>";
+$supportvalue.= " * Dolibarr version : ".DOL_VERSION."<br>";
+$supportvalue.= " * Dolibarr version installation initiale : ".$conf->global->MAIN_VERSION_LAST_INSTALL."<br>";
+$supportvalue.= " *****/"."<br><br>";
+$supportvalue.= "Description de votre problème :"."<br>";
+
+
+print '<form id="ticket" method="POST" target="_blank" action="https://support.easya.solutions/create_ticket.php">';
+print '<input name=message type="hidden" value="'.$supportvalue.'" />';
+print '<input name=email type="hidden" value="'.$user->email.'" />';
+print '<table class="centpercent"><tr>'."\n";
+print '<td width="310px"><img src="../img/opendsi_dolibarr_preferred_partner.png" /></td>'."\n";
+print '<td valign="top"><p>'.$langs->trans("OpenDsiAboutDesc1").' <button type="submit" >'.$langs->trans("OpenDsiAboutDesc2").'</button> '.$langs->trans("OpenDsiAboutDesc3").'</p></td>'."\n";
 print '</tr></table>'."\n";
+print '</form>'."\n";
 
-dol_fiche_end();
-
+print dol_get_fiche_end();
 
 llxFooter();
 

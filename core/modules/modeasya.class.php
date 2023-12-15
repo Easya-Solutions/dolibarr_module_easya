@@ -51,13 +51,15 @@ class modeasya extends DolibarrModules
 		// Key text used to identify module (for permissions, menus, etc...)
 		$this->rights_class = 'easya';
 
+		$this->family = 'easya';
         // Family can be 'crm','financial','hr','projects','products','ecm','technic','interface','other'
         // It is used to group modules by family in module setup page
-        $this->family = 'easya';
+        // $this->family = $family;
+
         // Module position in the family
         $this->module_position = 500;
         // Gives the possibility to the module, to provide his own family info and position of this family (Overwrite $this->family and $this->module_position. Avoid this)
-        $this->familyinfo = array('easya' => array('position' => '001', 'label' => $langs->trans("easyaFamily")));
+		    $this->familyinfo = array('easya' => array('position' => '001', 'label' => $langs->trans("easyaFamily")));
         // Where to store the module in setup page (0=common,1=interface,2=others,3=very specific)
         $this->special = 0;
 
