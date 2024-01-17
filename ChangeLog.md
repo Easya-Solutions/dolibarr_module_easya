@@ -1,6 +1,9 @@
 # ChangeLog
 Le format du fichier est basé sur [Tenez un ChangeLog](http://keepachangelog.com/fr/1.0.0/).
 
+## 2024.0.0 - 17-01-2024
+- Changement de version à l'occasion de la sortie de Easya 2024
+
 ## 2022.5.3 - 29-11-2022
 - Changement de version suite à la récupération de fixes sur DLBv14
 ## 2022.5.1 - 08-06-2022
