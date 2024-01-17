@@ -94,6 +94,7 @@ if (!empty($_FILES['csv_input']["name"])) {
 }
 
 // Load constants
+$err = '';
 if ($err == 0 && !empty($file_to_load)) {
     // get content as array
     try {

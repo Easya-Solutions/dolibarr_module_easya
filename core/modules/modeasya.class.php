@@ -108,7 +108,7 @@ class modeasya extends DolibarrModules
 
 		// Data directories to create when module is enabled.
 		// Example: this->dirs = array("/mymodule/temp");
-		$this->dirs = array();
+		$this->dirs = array("/easya/const_backup");
 
 		// Config pages. Put here list of php page, stored into mymodule/admin directory, to use to setup module.
 		$this->config_page_url = array("setup.php@easya");
@@ -119,7 +119,7 @@ class modeasya extends DolibarrModules
 		$this->requiredby = array();	// List of modules id to disable if this one is disabled
 		$this->conflictwith = array();	// List of modules id this module is in conflict with
 		$this->phpmin = array(7,0);					// Minimum version of PHP required by module
-		$this->need_dolibarr_version = array(14,0);	// Minimum version of Dolibarr required by module
+		$this->need_dolibarr_version = array(18,0);	// Minimum version of Dolibarr required by module
 		$this->langfiles = array("easya@easya", "opendsi@easya");
         $langs->load('easya@easya');
 
