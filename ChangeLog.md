@@ -1,6 +1,9 @@
 # ChangeLog
 Le format du fichier est basé sur [Tenez un ChangeLog](http://keepachangelog.com/fr/1.0.0/).
 
+## 2024.0.1 - 32-01-2024
+- Ajout d'un bandeau de maintenance sur détection d'un fichier
+
 ## 2024.0.0 - 17-01-2024
 - Changement de version à l'occasion de la sortie de Easya 2024
 

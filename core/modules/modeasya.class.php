@@ -74,7 +74,7 @@ class modeasya extends DolibarrModules
         $this->editor_email		= 'support@easya.solutions';
 		
 		// Possible values for version are: 'development', 'experimental', 'dolibarr', 'dolibarr_deprecated' or a version string like 'x.y.z'
-		$this->version = '2024.0.0';
+		$this->version = '2024.0.1';
 		// Key used in llx_const table to save module status enabled/disabled (where MYMODULE is value of property name of module in uppercase)
 		$this->const_name = 'MAIN_MODULE_'.strtoupper($this->name);
 		// Name of image file used for this module.
@@ -104,6 +104,7 @@ class modeasya extends DolibarrModules
 		$this->module_parts = array(
         //    'triggers' => 1,
         //    'models' => 1,
+		'hooks' => array('main', 'leftblock')
         );
 
 		// Data directories to create when module is enabled.
@@ -119,7 +120,7 @@ class modeasya extends DolibarrModules
 		$this->requiredby = array();	// List of modules id to disable if this one is disabled
 		$this->conflictwith = array();	// List of modules id this module is in conflict with
 		$this->phpmin = array(7,0);					// Minimum version of PHP required by module
-		$this->need_dolibarr_version = array(18,0);	// Minimum version of Dolibarr required by module
+		$this->need_dolibarr_version = array(14,0);	// Minimum version of Dolibarr required by module
 		$this->langfiles = array("easya@easya", "opendsi@easya");
         $langs->load('easya@easya');
 
