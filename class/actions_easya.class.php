@@ -65,7 +65,7 @@ class ActionsEasya
 
         $this->resprints = '';
 
-        if (file_exists(getDolGlobalString('EASYA_MAINTENANCE_FILE')) || file_exists(dol_buildpath(preg_replace('/^\/htdocs/', '', getDolGlobalString('EASYA_MAINTENANCE_FILE'))))) {
+        if (!empty(getDolGlobalString('EASYA_MAINTENANCE_FILE')) && (file_exists(getDolGlobalString('EASYA_MAINTENANCE_FILE')) || file_exists(dol_buildpath(preg_replace('/^\/htdocs/', '', getDolGlobalString('EASYA_MAINTENANCE_FILE')))))) {
             $this->resprints.= '<script>';
             $this->resprints.= '    $(() => {
                 $(".side-nav-vert").before(\'<div class="warning" style="background-color: red; color: white !important; font-weight: bold; font-size: 20px;">MODE MAINTENANCE</div>\') 
