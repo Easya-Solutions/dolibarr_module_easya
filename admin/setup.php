@@ -94,6 +94,7 @@ if (!empty($_FILES['csv_input']["name"])) {
 }
 
 // Load constants
+$err = '';
 if ($err == 0 && !empty($file_to_load)) {
     // get content as array
     try {
@@ -108,6 +109,11 @@ if ($err == 0 && !empty($file_to_load)) {
     } catch (Exception $e) {
         setEventMessage($e->getMessage(), 'errors');
     }
+}
+
+if ($action == "set") {
+    $maintenance_file = GETPOST('maintenance_file', 'alphanohtml');
+    dolibarr_set_const($db, 'EASYA_MAINTENANCE_FILE', $maintenance_file);
 }
 
 
@@ -163,7 +169,8 @@ print '<div class="center">';
 print '<input type="submit" class="button" value="'.$langs->trans("Load").'">';
 print '</div>';
 
-dol_fiche_end();
+
+
 
 /*
 print '<br>';
@@ -173,6 +180,32 @@ print '</div>';
 */
 
 print '</form>';
+
+print '<form method="post" action="'.$_SERVER["PHP_SELF"].'" enctype="multipart/form-data">';
+print '<input type="hidden" name="token" value="'.$_SESSION['newtoken'].'">';
+print '<input type="hidden" name="action" value="set">';
+
+print '<table class="noborder centpercent"><tbody>';
+
+print '<tr class="liste_titre">';
+print '<td colspan="3">'.$langs->trans("Others").'</td>';
+print "</tr>\n";
+
+print '<tr class="oddeven"> <td>';
+print '<label for="maintenance_file" >'.$langs->trans("EasyaMaintenanceFileLocation").'</label>';
+print '</td><td class="right">';
+print '<input id="maintenance_file" name="maintenance_file" type="text" value="'. getDolGlobalString('EASYA_MAINTENANCE_FILE') ?? '/htdocs/custom/.maintenance'.'"</input>';
+print '</td></tr>';
+
+print '<tbody><table>';
+
+print '<div class="center">';
+print '<input type="submit" class="button" value="'.$langs->trans("Submit").'">';
+print '</div>';
+
+print '</form>';
+
+dol_fiche_end();
 
 llxFooter();
 

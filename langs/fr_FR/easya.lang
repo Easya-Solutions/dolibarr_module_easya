@@ -15,3 +15,6 @@ TooLargeFile                          = Erreur : le fichier est trop grand (5Mo 
 PleaseProvideCSV                      = Erreur : le fichier n'est pas un CSV.
 NoPhpFile                             = Erreur : les fichiers PHP sont interdits.
 
+EasyaMaintenanceFileLocation        = Chemin vers le fichier de maintenance
+EasyaMaintenanceFileLocationHelp        = Chemin vers le fichier indiquant une opération de maintenance
+
