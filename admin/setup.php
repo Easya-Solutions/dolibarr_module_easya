@@ -193,10 +193,10 @@ print "</tr>\n";
 print '<tr class="oddeven"> <td>';
 print '<label for="maintenance_file" >'.$langs->trans("EasyaMaintenanceFileLocation").'</label>';
 print '</td><td class="right">';
-print '<input id="maintenance_file" name="maintenance_file" type="text" value="'. (!empty(getDolGlobalString('EASYA_MAINTENANCE_FILE')) ? getDolGlobalString('EASYA_MAINTENANCE_FILE') : '/htdocs/custom/.maintenance').'">';
+print '<input id="maintenance_file" name="maintenance_file" type="text" value="'.(getDolGlobalString('EASYA_MAINTENANCE_FILE') ?? '/htdocs/custom/.maintenance').'"></input>';
 print '</td></tr>';
 
-print '<tbody><table>';
+print '</tbody></table>';
 
 print '<div class="center">';
 print '<input type="submit" class="button" value="'.$langs->trans("Submit").'">';
