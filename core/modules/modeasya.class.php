@@ -104,6 +104,7 @@ class modeasya extends DolibarrModules
 		$this->module_parts = array(
         //    'triggers' => 1,
         //    'models' => 1,
+		'hooks' => array('main', 'leftblock')
         );
 
 		// Data directories to create when module is enabled.
